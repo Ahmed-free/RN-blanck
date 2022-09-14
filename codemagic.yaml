@@ -4,7 +4,8 @@ workflows:
     scripts:
     - name: Install npm i @react-native-community/cli-platform-android-cli
       script: |
-       npm i 
+       npm install -g jetifier
+       npx jetify 
        
     - name: Set up local properties # required for Android build
       script: |
