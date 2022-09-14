@@ -4,7 +4,7 @@ workflows:
     scripts:
     - name: Install npm i @react-native-community/cli-platform-android-cli
       script: |
-       cd android && ./gradlew clean
+       npm i @react-native-community/cli-platform-android-cli
        
     - name: Set up local properties # required for Android build
       script: |
