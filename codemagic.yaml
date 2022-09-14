@@ -2,9 +2,13 @@ workflows:
   build-android:
     name: Build All
     scripts:
+    - name: Install npm i @react-native-community/cli-platform-android-cli
+      script: |
+        npm npm i @react-native-community/cli-platform-android-cli
+       
     - name: Set up local properties # required for Android build
       script: |
-            echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+        echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
 
     - name: Build Android  debug      # for building in debug mode
       script: |
@@ -14,4 +18,4 @@ workflows:
     - name: Build iOS         # for building iOS (.ipa)
       script: |
         xcode-project use-profiles
-        xcode-project build-ipa --workspace "ios/MyReact.xcworkspace" --scheme "MyReact"    
+        xcode-project build-ipa --workspace "ios/MyReact.xcworkspace" --scheme "MyReact" 
