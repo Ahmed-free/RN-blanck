@@ -6,7 +6,11 @@ workflows:
     - name: Set up local properties # required for Android build
       script: |
         echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
-
+        
+    - name: do sit      
+      script: |
+        npm install
+        
     - name: Build Android  debug      # for building in debug mode
       script: |
         cd android
