@@ -2,10 +2,7 @@ workflows:
   build-android:
     name: Build All
     scripts:
-    - name: Install npm i @react-native-community/cli-platform-android-cli
-      script: |
-       npm i @react-native-community/cli-platform-android-cli
-       
+    
     - name: Set up local properties # required for Android build
       script: |
         echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
